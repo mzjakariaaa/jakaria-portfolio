@@ -1,0 +1,1617 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JAKARIA — Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #090909;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+       
+.hero {
+    min-height: 100vh;
+    padding: 35px 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+
+ background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.95)
+    ),
+    url("assets/images/background.jpg");
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+       
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(9, 9, 9, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 35px;
+            font-size: 12px;
+            color: #aaaaaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 100px 0;
+        }
+
+        .hero-label {
+            color: #999999;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 11vw, 170px);
+            line-height: 0.85;
+            letter-spacing: -8px;
+            font-weight: 900;
+        }
+
+        .hero-description {
+            margin-top: 35px;
+            font-size: 15px;
+            color: #aaaaaa;
+            line-height: 1.8;
+            max-width: 420px;
+        }
+
+        .hero-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            color: #888888;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 25px 6%;
+            }
+
+            .navbar {
+    padding: 20px 6%;
+}
+
+.menu {
+    gap: 12px;
+    font-size: 8px;
+}
+
+            .menu {
+                gap: 15px;
+                font-size: 9px;
+            }
+
+            .hero h1 {
+                letter-spacing: -4px;
+            }
+
+            .hero-bottom {
+                gap: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        
+/* TENTANG SAYA */
+
+.about {
+    min-height: 85vh;
+    padding: 120px 7%;
+    background: #101010;
+    display: flex;
+    align-items: center;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-label {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-title {
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
+.about-title span {
+    color: #777;
+}
+
+.about-description {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 2;
+    max-width: 480px;
+}
+
+.about-description p {
+    margin-bottom: 20px;
+}
+
+.about-signature {
+    margin-top: 35px;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+    .about {
+        padding: 90px 6%;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+
+/* GALERI KARYA */
+
+.works {
+    padding: 120px 7%;
+    background: #090909;
+}
+
+.works-container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.works-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 55px;
+    gap: 25px;
+}
+
+.works-label {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.works-title {
+    font-size: clamp(45px, 7vw, 90px);
+    letter-spacing: -4px;
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+.works-subtitle {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 250px;
+}
+
+.work-filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: transparent;
+    color: #888;
+    border: 1px solid #333;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 25px;
+}
+
+.work-card {
+    min-width: 0;
+}
+
+.work-image {
+    width: 100%;
+    aspect-ratio: 1.35 / 1;
+    overflow: hidden;
+    background: #181818;
+    margin-bottom: 20px;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.work-card:hover .work-image img {
+    transform: scale(1.06);
+}
+
+.work-category {
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.work-name {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.work-card.hidden {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .works {
+        padding: 90px 6%;
+    }
+
+    .works-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .works-title {
+        letter-spacing: -2px;
+    }
+}
+
+
+/* WILDPATH ID */
+
+.wildpath {
+    min-height: 90vh;
+    padding: 120px 7%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.92) 0%,
+            rgba(0,0,0,0.65) 55%,
+            rgba(0,0,0,0.35) 100%
+        ),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.wildpath-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.wildpath-label {
+    color: #bbb;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.wildpath-title {
+    font-size: clamp(55px, 10vw, 130px);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+}
+
+.wildpath-title span {
+    display: block;
+    color: #999;
+}
+
+.wildpath-description {
+    max-width: 520px;
+    margin-top: 35px;
+    color: #ccc;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.wildpath-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.wildpath-features span {
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 12px 18px;
+    color: #ddd;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.wildpath-link {
+    display: inline-block;
+    margin-top: 45px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.wildpath-link:hover {
+    color: #aaa;
+    border-color: #aaa;
+}
+
+@media (max-width: 600px) {
+    .wildpath {
+        padding: 90px 6%;
+    }
+
+    .wildpath-title {
+        letter-spacing: -3px;
+    }
+}
+
+
+/* CONTACT */
+
+.contact {
+    padding: 120px 7% 40px;
+    background: #101010;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contact-label {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 35px;
+}
+
+.contact-title {
+    font-size: clamp(55px, 10vw, 130px);
+    line-height: 0.9;
+    letter-spacing: -6px;
+    text-transform: uppercase;
+}
+
+.contact-title span {
+    color: #777;
+}
+
+.contact-description {
+    max-width: 430px;
+    color: #aaa;
+    line-height: 1.9;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.contact-email {
+    display: inline-block;
+    margin-top: 35px;
+    font-size: clamp(17px, 3vw, 27px);
+    padding-bottom: 10px;
+    border-bottom: 1px solid #777;
+    transition: 0.3s;
+}
+
+.contact-email:hover {
+    color: #aaa;
+    border-color: white;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 65px;
+    padding: 30px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.social-links a {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 35px;
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+    .contact {
+        padding: 90px 6% 30px;
+    }
+
+    .contact-title {
+        letter-spacing: -3px;
+    }
+
+    .social-links {
+        gap: 20px;
+    }
+}
+
+
+/* SCROLL REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sedikit jeda untuk elemen galeri */
+.work-card.reveal {
+    transition-delay: 0.1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.show {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* TAMPILAN GALERI KATEGORI */
+
+.work-detail {
+    display: none;
+    margin-top: 35px;
+}
+
+.work-detail.active {
+    display: block;
+    animation: galleryFadeIn .5s ease;
+}
+
+.category-card {
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+}
+
+.work-back {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.35);
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 35px;
+    transition: .3s ease;
+}
+
+.work-back:hover {
+    background: #fff;
+    color: #111;
+}
+
+.work-detail-heading {
+    margin-bottom: 30px;
+}
+
+.work-detail-heading h3 {
+    font-size: clamp(30px, 5vw, 55px);
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+@keyframes galleryFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* UKURAN GALERI KARYA */
+
+.work-detail .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+/* GAMBAR MEMPERTAHANKAN RASIO ASLI */
+
+.work-detail .work-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #151515;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.work-detail .work-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* JUDUL KARYA */
+
+.work-detail .work-name {
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .work-detail .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* HP */
+
+@media (max-width: 600px) {
+    .work-detail .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+
+/* GALERI TANPA JUDUL SETIAP FOTO */
+
+.work-detail .work-category,
+.work-detail .work-name {
+    display: none;
+}
+
+/* MASONRY GALLERY */
+
+.work-detail .work-grid {
+    display: block;
+    column-count: 3;
+    column-gap: 25px;
+}
+
+.work-detail .work-card {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 25px;
+    break-inside: avoid;
+    vertical-align: top;
+}
+
+.work-detail .work-image {
+    width: 100%;
+    height: auto;
+}
+
+.work-detail .work-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .work-detail .work-grid {
+        column-count: 2;
+        column-gap: 18px;
+    }
+}
+
+/* HP */
+
+@media (max-width: 600px) {
+    .work-detail .work-grid {
+        column-count: 2;
+        column-gap: 12px;
+    }
+
+    .work-detail .work-card {
+        margin-bottom: 12px;
+    }
+}
+
+/* LIGHTBOX GALLERY */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.96);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 80px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.lightbox button {
+    position: absolute;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 35px;
+    font-size: 40px;
+}
+
+.lightbox-prev {
+    left: 25px;
+    font-size: 30px;
+}
+
+.lightbox-next {
+    right: 25px;
+    font-size: 30px;
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: 25px;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .lightbox {
+        padding: 50px 45px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .lightbox-prev {
+        left: 8px;
+        font-size: 22px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+        font-size: 22px;
+    }
+
+    .lightbox img {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+}
+
+/* HERO: FOTO DAN TEKS */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-main {
+    width: 100%;
+    max-width: none;
+    min-height: 85vh;
+    margin: 0;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    width: auto;
+    max-width: 650px;
+}
+
+.hero-content h1 {
+    color: #e53935;
+}
+
+.hero-portrait {
+    flex: 0 0 45%;
+    height: 78vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 780px;
+    object-fit: contain;
+    object-position: bottom center;
+}
+
+/* TAMPILAN HP */
+@media (max-width: 768px) {
+    .hero-main {
+        width: 90%;
+        min-height: auto;
+        padding-top: 130px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-portrait {
+        width: 100%;
+        flex: none;
+        height: 48vh;
+        margin-top: 20px;
+    }
+
+    .hero-portrait img {
+        max-height: 450px;
+    }
+}
+
+/* MERAPIKAN KESEJAJARAN TEKS HERO */
+.hero-content {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    text-align: left !important;
+    transform: none !important;
+    width: 100%;
+    max-width: 650px;
+}
+
+.hero-content .hero-label,
+.hero-content h1,
+.hero-content .hero-description {
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+/* MENJAGA POSISI BLOK TULISAN */
+.hero-main {
+    justify-content: flex-start;
+}
+
+.hero-content {
+    flex: 1 1 55%;
+}
+
+.hero-portrait {
+    flex: 0 0 45%;
+}
+
+/* ELEMEN NEON MERAH DI BELAKANG FOTO */
+.hero-neon {
+    position: absolute;
+    right: -8%;
+    bottom: 15%;
+    width: 25%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero-neon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom right;
+
+    filter:
+        drop-shadow(0 0 5px rgba(255, 0, 0, 0.9))
+        drop-shadow(0 0 15px rgba(255, 0, 0, 0.8))
+        drop-shadow(0 0 35px rgba(255, 0, 0, 0.6))
+        drop-shadow(0 0 60px rgba(255, 0, 0, 0.3));
+    
+    opacity: 0.9;
+}
+
+/* FOTO TETAP DI DEPAN NEON */
+.hero-portrait {
+    position: relative;
+    z-index: 2;
+}
+
+/* TULISAN TETAP DI ATAS ELEMEN DEKORATIF */
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* PENYESUAIAN HP */
+@media (max-width: 768px) {
+    .hero-neon {
+        width: 100%;
+        height: 50%;
+        right: -15%;
+        bottom: 0;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <nav class="navbar">
+            <div class="logo">JAKARIA.</div>
+
+            
+<div class="menu">
+    <a href="#home">Beranda</a>
+    <a href="#about">Tentang</a>
+    <a href="#works">Karya</a>
+    <a href="#wildpath">WildPath ID</a>
+    <a href="#contact">Kontak</a>
+</div>
+        </nav>
+
+ 
+<div class="hero-main">
+
+    <div class="hero-content" id="home">
+        <p class="hero-label">
+            Personal Portfolio — 2026
+        </p>
+
+        <h1>JAKARIA.</h1>
+
+        <p class="hero-description">
+            Menciptakan. Mengabadikan. Menjelajahi.
+            <br>
+            Sebuah ruang untuk karya, cerita, kreativitas,
+            dan perjalanan dalam setiap langkah.
+        </p>
+    </div>
+
+<div class="hero-neon">
+    <img src="assets/images/neon-shape.png" alt="">
+</div>
+
+    <div class="hero-portrait">
+        <img src="assets/images/jakaria.png" alt="Foto Jakaria">
+    </div>
+
+</div>
+
+        <div class="hero-bottom">
+            <span>Visual • Story • Exploration</span>
+            <span>Scroll to Discover ↓</span>
+        </div>
+
+   
+    </section>
+
+    <!-- TENTANG SAYA -->
+    <section class="about" id="about">
+
+        <div class="about-container">
+
+            <p class="about-label">
+                01 — Tentang Saya
+            </p>
+
+            <div class="about-content">
+
+                <h2 class="about-title">
+                    Bukan sekadar
+                    <span>tentang karya.</span>
+                </h2>
+
+                <div class="about-description">
+
+                    <p>
+                        Saya percaya bahwa setiap karya memiliki
+                        cerita, setiap perjalanan memiliki makna,
+                        dan setiap momen layak untuk diabadikan.
+                    </p>
+
+                    <p>
+                        Dari dunia desain grafis, fotografi,
+                        hingga videografi, saya terus mengeksplorasi
+                        cara baru untuk menuangkan ide dan
+                        menangkap perspektif.
+                    </p>
+
+                    <p>
+                        Di luar kreativitas visual, alam menjadi
+                        ruang untuk belajar, bertumbuh, dan
+                        menemukan cerita baru bersama WildPath ID.
+                    </p>
+
+                    <div class="about-signature">
+                        JAKARIA — Personal Portfolio
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+<!-- GALERI KARYA -->
+<section class="works" id="works">
+
+    <div class="works-container">
+
+        <div class="works-heading">
+            <div>
+                <p class="works-label">02 — Portofolio</p>
+                <h2 class="works-title">Karya &<br>Cerita.</h2>
+            </div>
+
+            <p class="works-subtitle">
+                Kumpulan cerita, perspektif, dan
+                kreativitas yang diwujudkan melalui karya.
+            </p>
+        </div>
+
+        <!-- TAMPILAN AWAL: 4 KATEGORI -->
+        <div class="work-grid" id="categoryMenu">
+
+            <article class="work-card category-card"
+                     data-open-gallery="desain">
+                <div class="work-image">
+                    <img src="assets/images/cover-desain.jpeg" alt="Desain grafis">
+                </div>
+                <p class="work-category">Kategori 01</p>
+                <h3 class="work-name">Desain Grafis</h3>
+            </article>
+
+            <article class="work-card category-card"
+                     data-open-gallery="foto">
+                <div class="work-image">
+                    <img src="assets/images/cover-fotografi.jpeg" alt="Fotografi">
+                </div>
+                <p class="work-category">Kategori 02</p>
+                <h3 class="work-name">Fotografi</h3>
+            </article>
+
+            <article class="work-card category-card"
+                     data-open-gallery="video">
+                <div class="work-image">
+                    <img src="assets/images/cover-videografi.jpeg" alt="Videografi">
+                </div>
+                <p class="work-category">Kategori 03</p>
+                <h3 class="work-name">Videografi</h3>
+            </article>
+
+            <article class="work-card category-card"
+                     data-open-gallery="semua">
+                <div class="work-image">
+                   <img src="assets/images/cover-semua.jpeg" alt="Kumpulan karya">
+                </div>
+                <p class="work-category">Kategori 04</p>
+                <h3 class="work-name">Semua Karya</h3>
+            </article>
+
+        </div>
+
+
+        <!-- GALERI DESAIN GRAFIS -->
+        <div class="work-detail" id="gallery-desain">
+
+            <button class="work-back" type="button">
+                ← Kembali ke Kategori
+            </button>
+
+            <div class="work-detail-heading">
+                <p class="works-label">KOLEKSI KARYA 01</p>
+                <h3>Desain Grafis.</h3>
+            </div>
+
+            <div class="work-grid">
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Visual desain alam">
+                    </div>
+                    <p class="work-category">Desain Grafis</p>
+                    <h3 class="work-name">Visual Exploration</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=85" alt="Eksplorasi desain grafis">
+                    </div>
+                    <p class="work-category">Desain Grafis</p>
+                    <h3 class="work-name">Creative Design</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85" alt="Karya poster desain">
+                    </div>
+                    <p class="work-category">Desain Grafis</p>
+                    <h3 class="work-name">Poster Collection</h3>
+                </article>
+
+            </div>
+        </div>
+
+
+        <!-- GALERI FOTOGRAFI -->
+        <div class="work-detail" id="gallery-foto">
+
+            <button class="work-back" type="button">
+                ← Kembali ke Kategori
+            </button>
+
+            <div class="work-detail-heading">
+                <p class="works-label">KOLEKSI KARYA 02</p>
+                <h3>Fotografi.</h3>
+            </div>
+
+            <div class="work-grid">
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85" alt="Fotografi pegunungan">
+                    </div>
+                    <p class="work-category">Fotografi</p>
+                    <h3 class="work-name">Into The Mountains</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85" alt="Fotografi alam">
+                    </div>
+                    <p class="work-category">Fotografi</p>
+                    <h3 class="work-name">Nature Perspective</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85" alt="Fotografi alam">
+                    </div>
+                    <p class="work-category">Fotografi</p>
+                    <h3 class="work-name">Nature Moments</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=85" alt="Fotografi satwa dan alam">
+                    </div>
+                    <p class="work-category">Fotografi</p>
+                    <h3 class="work-name">Wild Perspective</h3>
+                </article>
+
+            </div>
+        </div>
+
+
+        <!-- GALERI VIDEOGRAFI -->
+        <div class="work-detail" id="gallery-video">
+
+            <button class="work-back" type="button">
+                ← Kembali ke Kategori
+            </button>
+
+            <div class="work-detail-heading">
+                <p class="works-label">KOLEKSI KARYA 03</p>
+                <h3>Videografi.</h3>
+            </div>
+
+            <div class="work-grid">
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1000&q=85" alt="Produksi videografi">
+                    </div>
+                    <p class="work-category">Videografi</p>
+                    <h3 class="work-name">Visual Stories</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=85" alt="Produksi video">
+                    </div>
+                    <p class="work-category">Videografi</p>
+                    <h3 class="work-name">Cinematic Journey</h3>
+                </article>
+
+            </div>
+        </div>
+
+
+        <!-- SEMUA KARYA -->
+        <div class="work-detail" id="gallery-semua">
+
+            <button class="work-back" type="button">
+                ← Kembali ke Kategori
+            </button>
+
+            <div class="work-detail-heading">
+                <p class="works-label">SELURUH PORTOFOLIO</p>
+                <h3>Semua Karya.</h3>
+            </div>
+
+            <div class="work-grid">
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Visual desain alam">
+                    </div>
+                    <p class="work-category">Desain Grafis</p>
+                    <h3 class="work-name">Visual Exploration</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=85" alt="Eksplorasi desain grafis">
+                    </div>
+                    <p class="work-category">Desain Grafis</p>
+                    <h3 class="work-name">Creative Design</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85" alt="Karya poster desain">
+                    </div>
+                    <p class="work-category">Desain Grafis</p>
+                    <h3 class="work-name">Poster Collection</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85" alt="Fotografi pegunungan">
+                    </div>
+                    <p class="work-category">Fotografi</p>
+                    <h3 class="work-name">Into The Mountains</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85" alt="Fotografi alam">
+                    </div>
+                    <p class="work-category">Fotografi</p>
+                    <h3 class="work-name">Nature Perspective</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85" alt="Fotografi alam">
+                    </div>
+                    <p class="work-category">Fotografi</p>
+                    <h3 class="work-name">Nature Moments</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=85" alt="Fotografi satwa dan alam">
+                    </div>
+                    <p class="work-category">Fotografi</p>
+                    <h3 class="work-name">Wild Perspective</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1000&q=85" alt="Produksi videografi">
+                    </div>
+                    <p class="work-category">Videografi</p>
+                    <h3 class="work-name">Visual Stories</h3>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-image">
+                        <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=85" alt="Produksi video">
+                    </div>
+                    <p class="work-category">Videografi</p>
+                    <h3 class="work-name">Cinematic Journey</h3>
+                </article>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WILDPATH ID -->
+<section class="wildpath" id="wildpath">
+
+    <div class="wildpath-container">
+
+        <p class="wildpath-label">
+            03 — Beyond Creativity
+        </p>
+
+        <h2 class="wildpath-title">
+            WILDPATH
+            <span>ID.</span>
+        </h2>
+
+        <p class="wildpath-description">
+            Bukan sekadar perjalanan, tetapi tentang
+            pengalaman, persahabatan, dan cerita yang
+            ditemukan di setiap langkah.
+
+            WildPath ID merupakan komunitas eksplorasi
+            alam yang menghadirkan kegiatan open trip,
+            guiding, dan perjalanan untuk mengenal
+            lebih dekat keindahan alam Indonesia.
+        </p>
+
+        <div class="wildpath-features">
+            <span>Mountain Exploration</span>
+            <span>Open Trip</span>
+            <span>Outdoor Experience</span>
+        </div>
+
+        <a href="#contact" class="wildpath-link">
+            Mari Jelajahi Bersama →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="contact-container">
+
+        <p class="contact-label">
+            04 — Hubungi Saya
+        </p>
+
+        <h2 class="contact-title">
+            LET'S<br>
+            <span>CONNECT.</span>
+        </h2>
+
+        <p class="contact-description">
+            Punya ide, proyek kreatif, peluang kolaborasi,
+            atau ingin menjelajahi alam bersama?
+            Mari mulai percakapan.
+        </p>
+
+        <a href="mailto:mzjakariaaa@gmail.com"
+           class="contact-email">
+            mzjakariaaa@gmail.com →
+        </a>
+
+        <div class="social-links">
+
+            <a href="https://www.instagram.com/amzkaa_/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram ↗
+            </a>
+
+            <a href="https://wa.me/6282116806556"
+               target="_blank"
+               rel="noopener noreferrer">
+                WhatsApp ↗
+            </a>
+
+            <a href="mailto:mzjakariaaa@gmail.com">
+                Email ↗
+            </a>
+
+        </div>
+
+        <footer class="footer">
+            <span>© 2026 JAKARIA.</span>
+            <span>PERSONAL PORTFOLIO</span>
+            <span>MADE WITH CREATIVITY.</span>
+        </footer>
+
+    </div>
+
+</section>
+
+<script>
+    const revealElements = document.querySelectorAll(
+        "#about, #works, #wildpath, #contact, .work-card"
+    );
+
+    revealElements.forEach(element => {
+        element.classList.add("reveal");
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            } else {
+                entry.target.classList.remove("show");
+            }
+
+        });
+
+    }, {
+        threshold: 0.10,
+        rootMargin: "0px 0px -40px 0px"
+    });
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+</script>
+
+
+<script>
+// MEMBUKA GALERI KATEGORI
+
+const categoryMenu = document.getElementById("categoryMenu");
+
+const gallerySections = document.querySelectorAll(".work-detail");
+
+const categoryCards = document.querySelectorAll("[data-open-gallery]");
+
+const backButtons = document.querySelectorAll(".work-back");
+
+// Membuka kategori ketika kartu diklik
+categoryCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const category = card.dataset.openGallery;
+
+        // Sembunyikan menu kategori
+        categoryMenu.style.display = "none";
+
+        // Sembunyikan semua galeri
+        gallerySections.forEach(gallery => {
+            gallery.classList.remove("active");
+        });
+
+        // Tampilkan galeri yang dipilih
+        const selectedGallery = document.getElementById(
+            "gallery-" + category
+        );
+
+        if (selectedGallery) {
+            selectedGallery.classList.add("active");
+        }
+
+    });
+
+});
+
+
+// KEMBALI KE MENU KATEGORI
+
+backButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // Sembunyikan seluruh galeri
+        gallerySections.forEach(gallery => {
+            gallery.classList.remove("active");
+        });
+
+        // Tampilkan kembali 4 kategori
+        categoryMenu.style.display = "grid";
+
+    });
+
+});
+
+</script>
+
+
+<!-- LIGHTBOX GALLERY -->
+<div class="lightbox" id="lightbox">
+
+    <button class="lightbox-close" id="lightboxClose" aria-label="Tutup">
+        &times;
+    </button>
+
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Foto sebelumnya">
+        &#10094;
+    </button>
+
+    <img id="lightboxImage" src="" alt="Pratinjau karya">
+
+    <button class="lightbox-next" id="lightboxNext" aria-label="Foto berikutnya">
+        &#10095;
+    </button>
+
+    <div class="lightbox-counter" id="lightboxCounter">
+        1 / 1
+    </div>
+
+</div>
+
+</body>
+</html>
+
